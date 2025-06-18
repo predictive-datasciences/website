@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pds-website/static/css/main.66fa88f4.css",
-    "main.js": "/pds-website/static/js/main.63c07d6e.js",
-    "static/js/453.e0e33218.chunk.js": "/pds-website/static/js/453.e0e33218.chunk.js",
-    "index.html": "/pds-website/index.html",
-    "main.66fa88f4.css.map": "/pds-website/static/css/main.66fa88f4.css.map",
-    "main.63c07d6e.js.map": "/pds-website/static/js/main.63c07d6e.js.map",
-    "453.e0e33218.chunk.js.map": "/pds-website/static/js/453.e0e33218.chunk.js.map"
+    "main.css": "./static/css/main.66fa88f4.css",
+    "main.js": "./static/js/main.641aef2b.js",
+    "static/js/453.e0e33218.chunk.js": "./static/js/453.e0e33218.chunk.js",
+    "index.html": "./index.html",
+    "main.66fa88f4.css.map": "./static/css/main.66fa88f4.css.map",
+    "main.641aef2b.js.map": "./static/js/main.641aef2b.js.map",
+    "453.e0e33218.chunk.js.map": "./static/js/453.e0e33218.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66fa88f4.css",
-    "static/js/main.63c07d6e.js"
+    "static/js/main.641aef2b.js"
   ]
 }
