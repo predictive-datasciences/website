@@ -1,11 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CONTENT } from '../config/content';
 import './About.css';
+
+// Professional Icon Component
+const PlaceholderIcon = ({ type, size = "40" }) => (
+  <div className="placeholder-icon">
+    <div className="icon-placeholder" data-type={type}>
+      <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="40" height="40" rx="8" fill="currentColor" opacity="0.1"/>
+        <circle cx="20" cy="20" r="8" fill="currentColor" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+);
 
 const About = () => {
   const [isVisible, setIsVisible] = useState({});
+  const [expandedService, setExpandedService] = useState(null);
 
   useEffect(() => {
+    // Fix the content vanishing issue by ensuring proper initialization
+    setIsVisible({
+      'about-intro': true,
+      'mission-section': true,
+      'services-section': true,
+      'approach-section': true,
+      'why-choose-section': true,
+      'industries-section': true
+    });
+
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -28,135 +52,145 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const approaches = [
-    {
-      title: 'Data Science Excellence',
-      description: 'We rely on data science, not just standard analytics, applying the latest thinking in advanced methodologies.',
-      icon: '🔬'
-    },
-    {
-      title: 'Innovation First',
-      description: 'Every assignment is approached with fresh eyes. No off-the-shelf solutions - innovation makes our solutions more valuable.',
-      icon: '💡'
-    },
-    {
-      title: 'Experienced Leadership',
-      description: 'Led by early adopters of data analysis in financial services, bringing broad experience solving difficult problems.',
-      icon: '👥'
-    },
-    {
-      title: 'Partnership Approach',
-      description: 'We work with and learn from the best and brightest, creating solutions that benefit millions of people.',
-      icon: '🤝'
-    }
-  ];
-
-  const industries = [
-    { name: 'Fintech & Digital Banking', icon: '🏦' },
-    { name: 'Traditional Banking', icon: '🏛️' },
-    { name: 'Insurance Companies', icon: '🛡️' },
-    { name: 'Investment Firms', icon: '📈' },
-    { name: 'Lending Platforms', icon: '💰' },
-    { name: 'Payment Processors', icon: '💳' }
-  ];
+  const toggleServiceDetails = (index) => {
+    setExpandedService(expandedService === index ? null : index);
+  };
 
   return (
     <div className="about">
       {/* Header Section */}
-      <section className="about-header section">
+      <section className="about-header section bg-gradient-hero">
         <div className="container">
           <div
             id="about-intro"
             data-animate
-            className={`about-intro ${isVisible['about-intro'] ? 'animate-fadeInUp' : ''}`}
+            className={`about-intro text-center ${isVisible['about-intro'] ? 'animate-fadeInUp' : ''}`}
           >
-            <h1>About Predictive Data Sciences</h1>
-            <p className="about-tagline">
-              Creating the future of big data through innovative predictive analytics solutions
+            <h1>{CONTENT.about.hero.title}</h1>
+            <p className="about-tagline text-large mb-6">
+              {CONTENT.about.hero.subtitle}
             </p>
           </div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="mission-section section bg-gray-100">
+      <section className="mission-section section bg-primary-light">
         <div className="container">
-          <div className="mission-content">
-            <div
-              id="mission-image"
-              data-animate
-              className={`mission-image ${isVisible['mission-image'] ? 'slide-in-left' : ''}`}
-            >
-              <div className="placeholder-image">
-                <div className="placeholder-content">
-                  <div className="placeholder-icon">🎯</div>
-                  <p>Mission & Vision<br/><small>Placeholder for your asset</small></p>
-                </div>
+          <div
+            id="mission-section"
+            data-animate
+            className={`mission-content ${isVisible['mission-section'] ? 'animate-fadeInUp' : ''}`}
+          >
+            <div className="mission-text">
+              <div className="section-header">
+                <h2>{CONTENT.about.mission.title}</h2>
               </div>
-            </div>
-
-            <div
-              id="mission-text"
-              data-animate
-              className={`mission-text ${isVisible['mission-text'] ? 'slide-in-right' : ''}`}
-            >
-              <h2>The Need for Predictive Data Sciences</h2>
               <div className="mission-paragraphs">
-                <p>
-                  Millions of people and small businesses in the US and around the world are still underserved by
-                  traditional sources of credit. Long after the 2008 financial crisis, bank loans are still out of reach
-                  for many, creating a significant gap in the financial ecosystem.
-                </p>
-                <p>
-                  Meeting the needs of these underserved customers demands new ways of assessing credit and fraud risk.
-                  Until now, even big data methods have fallen short of providing comprehensive solutions that can
-                  effectively serve this market segment.
-                </p>
-                <p>
-                  <strong>Predictive Data Sciences</strong> offers innovative solutions through emerging methodologies combined with
-                  deep experience and cutting-edge innovation. As our name implies, we rely on data science, not just standard
-                  analytics. We apply only the latest thinking because the ever-growing challenges of risk analysis demand it.
-                </p>
-                <p>
-                  We're led by some of the earliest adopters of data analysis in financial services, bringing broad experience
-                  in solving difficult problems. Finally, we approach every assignment with fresh eyes—no off-the-shelf
-                  solutions will do. Innovation makes our solutions more valuable to our customers.
-                </p>
+                {CONTENT.about.mission.content.map((paragraph, index) => (
+                  <p key={index} className="text-large">{paragraph}</p>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Approach Section */}
-      <section className="approach-section section">
+      {/* Services Section */}
+      <section className="services-section section bg-white">
         <div className="container">
           <div
-            id="approach-header"
+            id="services-section"
             data-animate
-            className={`section-header ${isVisible['approach-header'] ? 'animate-fadeInUp' : ''}`}
+            className={`section-header ${isVisible['services-section'] ? 'animate-fadeInUp' : ''}`}
           >
-            <h2>Our Approach</h2>
-            <p>
-              We combine cutting-edge data science with deep industry expertise to deliver
-              solutions that transform how businesses assess risk and make decisions.
-            </p>
+            <h2>{CONTENT.about.services.title}</h2>
+            <p>{CONTENT.about.services.subtitle}</p>
           </div>
 
+          <div className="services-grid grid grid-auto-fit-lg">
+            {CONTENT.about.services.items.map((service, index) => (
+              <div key={index} className="service-card card">
+                <div className="service-header card-header">
+                  <PlaceholderIcon type={service.title.toLowerCase().replace(/\s+/g, '-')} />
+                  <h3 className="service-title card-title">{service.title}</h3>
+                </div>
+
+                <p className="service-description card-description">{service.description}</p>
+
+                <div className={`service-details ${expandedService === index ? 'expanded' : ''}`}>
+                  <div className="service-long-description">
+                    <p className="text-small">{service.longDescription}</p>
+
+                    <ul className="service-features">
+                      {service.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="text-small">{detail}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="card-footer">
+                  <button
+                    className="read-more-btn btn btn-ghost btn-sm"
+                    onClick={() => toggleServiceDetails(index)}
+                  >
+                    {expandedService === index ? 'Read Less' : 'Read More'}
+                    <span className={`arrow ${expandedService === index ? 'expanded' : ''}`}>→</span>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="why-choose-section section bg-secondary-light">
+        <div className="container">
           <div
-            id="approach-grid"
+            id="why-choose-section"
             data-animate
-            className={`approach-grid ${isVisible['approach-grid'] ? 'animate-fadeInUp' : ''}`}
+            className={`section-header ${isVisible['why-choose-section'] ? 'animate-fadeInUp' : ''}`}
           >
-            {approaches.map((approach, index) => (
-              <div
-                key={index}
-                className="approach-card"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="approach-icon">{approach.icon}</div>
-                <h3>{approach.title}</h3>
-                <p>{approach.description}</p>
+            <h2>{CONTENT.about.whyChooseUs.title}</h2>
+            <p>{CONTENT.about.whyChooseUs.subtitle}</p>
+          </div>
+
+          <div className="why-choose-grid grid grid-auto-fit-md">
+            {CONTENT.about.whyChooseUs.items.map((item, index) => (
+              <div key={index} className="why-choose-card card text-center">
+                <div className="card-header justify-center">
+                  <PlaceholderIcon type={item.title.toLowerCase().replace(/\s+/g, '-')} />
+                </div>
+                <h3 className="card-title">{item.title}</h3>
+                <p className="card-description">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Approach Section */}
+      <section className="approach-section section bg-white">
+        <div className="container">
+          <div
+            id="approach-section"
+            data-animate
+            className={`section-header ${isVisible['approach-section'] ? 'animate-fadeInUp' : ''}`}
+          >
+            <h2>{CONTENT.about.approach.title}</h2>
+            <p>{CONTENT.about.approach.subtitle}</p>
+          </div>
+
+          <div className="approach-grid grid grid-3">
+            {CONTENT.about.approach.items.map((item, index) => (
+              <div key={index} className="approach-card card text-center">
+                <div className="card-header justify-center">
+                  <PlaceholderIcon type={item.title.toLowerCase().replace(/\s+/g, '-')} />
+                </div>
+                <h3 className="card-title">{item.title}</h3>
+                <p className="card-description">{item.description}</p>
               </div>
             ))}
           </div>
@@ -164,127 +198,43 @@ const About = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="industries-section section bg-gray-100">
+      <section className="industries-section section bg-gray">
         <div className="container">
           <div
-            id="industries-header"
+            id="industries-section"
             data-animate
-            className={`section-header ${isVisible['industries-header'] ? 'animate-fadeInUp' : ''}`}
+            className={`section-header ${isVisible['industries-section'] ? 'animate-fadeInUp' : ''}`}
           >
-            <h2>Industries We Serve</h2>
-            <p>
-              Our predictive analytics solutions are tailored for financial services companies
-              across various sectors, helping them make better decisions and serve customers more effectively.
-            </p>
+            <h2>{CONTENT.about.industries.title}</h2>
+            <p>{CONTENT.about.industries.subtitle}</p>
           </div>
 
-          <div
-            id="industries-grid"
-            data-animate
-            className={`industries-grid ${isVisible['industries-grid'] ? 'animate-fadeInUp' : ''}`}
-          >
-            {industries.map((industry, index) => (
-              <div
-                key={index}
-                className="industry-card"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="industry-icon">{industry.icon}</div>
-                <h4>{industry.name}</h4>
+          <div className="industries-grid grid grid-4">
+            {CONTENT.about.industries.items.map((industry, index) => (
+              <div key={index} className="industry-item card card-compact text-center">
+                <PlaceholderIcon type={industry.toLowerCase().replace(/\s+/g, '-')} size="32" />
+                <span className="text-sm font-medium mt-3">{industry}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="values-section section">
-        <div className="container">
-          <div className="values-content">
-            <div
-              id="values-text"
-              data-animate
-              className={`values-text ${isVisible['values-text'] ? 'slide-in-left' : ''}`}
-            >
-              <h2>Our Values</h2>
-              <div className="values-list">
-                <div className="value-item">
-                  <div className="value-icon">🎯</div>
-                  <div>
-                    <h4>Excellence in Execution</h4>
-                    <p>We deliver solutions that exceed expectations and drive real business results.</p>
-                  </div>
-                </div>
-                <div className="value-item">
-                  <div className="value-icon">🤝</div>
-                  <div>
-                    <h4>Collaborative Partnership</h4>
-                    <p>We work closely with our clients to understand their unique challenges and goals.</p>
-                  </div>
-                </div>
-                <div className="value-item">
-                  <div className="value-icon">🔬</div>
-                  <div>
-                    <h4>Scientific Rigor</h4>
-                    <p>Our solutions are built on solid scientific foundations and proven methodologies.</p>
-                  </div>
-                </div>
-                <div className="value-item">
-                  <div className="value-icon">🚀</div>
-                  <div>
-                    <h4>Continuous Innovation</h4>
-                    <p>We stay at the forefront of technology to provide cutting-edge solutions.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              id="values-stats"
-              data-animate
-              className={`values-stats ${isVisible['values-stats'] ? 'slide-in-right' : ''}`}
-            >
-              <div className="stats-container">
-                <div className="stat-highlight">
-                  <div className="stat-number">$300M+</div>
-                  <div className="stat-label">Loans Originated</div>
-                  <p>Through our advanced LOS systems and risk assessment models</p>
-                </div>
-                <div className="stat-highlight">
-                  <div className="stat-number">100+</div>
-                  <div className="stat-label">Patents Filed</div>
-                  <p>Innovation in fraud detection and predictive modeling</p>
-                </div>
-                <div className="stat-highlight">
-                  <div className="stat-number">20+</div>
-                  <div className="stat-label">Years Experience</div>
-                  <p>Deep expertise in financial services and data science</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="cta-section section">
+      <section className="cta-section section bg-gradient-secondary">
         <div className="container">
-          <div
-            id="about-cta"
-            data-animate
-            className={`cta-content ${isVisible['about-cta'] ? 'animate-fadeInUp' : ''}`}
-          >
-            <h2>Ready to Get Started?</h2>
-            <p>
-              Let's discuss how our predictive analytics expertise can help your organization
-              make better decisions, reduce risks, and unlock new opportunities.
+          <div className="cta-content text-center">
+            <h2>Ready to Transform Your Business?</h2>
+            <p className="text-large mb-8">
+              Partner with Predictive Data Sciences to unlock the power of AI-driven
+              predictive analytics and take your financial services to the next level.
             </p>
-            <div className="cta-actions">
-              <Link to="/contact" className="btn btn-lg" style={{ backgroundColor: 'white', color: 'var(--primary-blue)' }}>
-                Contact Us Today
+            <div className="cta-actions flex gap-4 justify-center">
+              <Link to="/contact" className="btn btn-primary btn-xl">
+                Get Started Today
               </Link>
-              <Link to="/leadership" className="btn btn-outline btn-lg" style={{ borderColor: 'white', color: 'white' }}>
-                Meet Our Team
+              <Link to="/careers" className="btn btn-outline-white btn-xl">
+                Join Our Team
               </Link>
             </div>
           </div>

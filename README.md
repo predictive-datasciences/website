@@ -1,70 +1,276 @@
-# Getting Started with Create React App
+# Predictive Data Sciences Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, professional React website for Predictive Data Sciences - showcasing advanced predictive analytics and AI solutions for financial services.
 
-## Available Scripts
+## 🚀 Quick Start
 
-In the project directory, you can run:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### `npm start`
+2. **Start the development server:**
+   ```bash
+   npm start
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```
+src/
+├── components/          # Reusable components
+│   ├── Header.js       # Navigation header
+│   └── Footer.js       # Site footer
+├── pages/              # Page components
+│   ├── Home.js         # Homepage with key features
+│   ├── About.js        # Detailed services & company info
+│   ├── Careers.js      # Job listings (2 roles)
+│   ├── Leadership.js   # Team information
+│   └── Contact.js      # Contact form
+├── config/             # Configuration files
+│   └── constants.js    # Centralized settings
+└── assets/             # Static assets (create this folder)
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ Configuration
 
-### `npm run build`
+### 1. Update Company Information
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Edit `src/config/constants.js` to customize:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Company details** (name, email, tagline)
+- **Social media links** (LinkedIn, Twitter, email)
+- **Job openings** (currently 2 roles: Full Stack Developer & Data Scientist)
+- **Statistics** for the rolling stats bar
+- **Email service configuration**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Replace Placeholder Assets
 
-### `npm run eject`
+The website currently uses placeholder icons. To add your actual assets:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Create the assets directory:**
+   ```bash
+   mkdir public/assets
+   mkdir public/assets/icons
+   mkdir public/assets/team
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Add your assets:**
+   - Logo: `public/assets/logo.svg`
+   - Service icons: `public/assets/icons/[service-name].svg`
+   - Team photos: `public/assets/team/[member-name].jpg`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Update asset paths in `src/config/constants.js`:**
+   ```javascript
+   export const ASSETS = {
+     logo: "/assets/logo.svg",
+     services: {
+       riskAssessment: "/assets/icons/risk-assessment.svg",
+       fraudDetection: "/assets/icons/fraud-detection.svg",
+       // ... add more as needed
+     }
+   };
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Replace Placeholder Icons
 
-## Learn More
+Currently, all icons use placeholder SVGs. To replace them:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Option A: Use actual SVG files**
+   - Replace the placeholder `<svg>` content in the `PlaceholderIcon` components
+   - Use your own SVG icons based on the `type` prop
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Option B: Use an icon library**
+   ```bash
+   npm install react-icons
+   ```
+   Then replace `PlaceholderIcon` components with actual icons.
 
-### Code Splitting
+## 🔗 Social Media Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Update Social Links
 
-### Analyzing the Bundle Size
+In `src/config/constants.js`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```javascript
+export const SOCIAL_LINKS = {
+  linkedin: {
+    url: "https://linkedin.com/company/your-actual-company", // UPDATE THIS
+    enabled: true
+  },
+  twitter: {
+    url: "https://twitter.com/your-company", // UPDATE THIS
+    enabled: true // Set to true when ready
+  }
+};
+```
 
-### Making a Progressive Web App
+### Add More Social Platforms
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Add new platforms to `SOCIAL_LINKS` in constants.js
+2. Update the Footer component to include the new links
+3. Add corresponding SVG icons
 
-### Advanced Configuration
+## 📧 Email Service Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Option 1: EmailJS (Recommended for simple setups)
 
-### Deployment
+1. **Install EmailJS:**
+   ```bash
+   npm install @emailjs/browser
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. **Set up EmailJS account:**
+   - Go to [EmailJS.com](https://www.emailjs.com/)
+   - Create account and get your Service ID, Template ID, and Public Key
 
-### `npm run build` fails to minify
+3. **Update configuration in `src/config/constants.js`:**
+   ```javascript
+   export const EMAIL_CONFIG = {
+     service: "emailjs",
+     serviceId: "YOUR_SERVICE_ID",
+     templateId: "YOUR_TEMPLATE_ID",
+     publicKey: "YOUR_PUBLIC_KEY"
+   };
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. **Implement in Contact form:**
+   ```javascript
+   import emailjs from '@emailjs/browser';
+   import { EMAIL_CONFIG } from '../config/constants';
+
+   const sendEmail = (formData) => {
+     emailjs.send(
+       EMAIL_CONFIG.serviceId,
+       EMAIL_CONFIG.templateId,
+       formData,
+       EMAIL_CONFIG.publicKey
+     );
+   };
+   ```
+
+### Option 2: Custom Backend
+
+1. **Create API endpoint** for form submissions
+2. **Update Contact page** to POST to your API
+3. **Configure email service** (SendGrid, Mailgun, etc.) on your backend
+
+## 📈 Analytics Integration
+
+### Google Analytics
+
+1. **Install gtag:**
+   ```bash
+   npm install gtag
+   ```
+
+2. **Update `src/config/constants.js`:**
+   ```javascript
+   export const ANALYTICS_CONFIG = {
+     googleAnalyticsId: "GA_MEASUREMENT_ID" // Replace with your ID
+   };
+   ```
+
+3. **Add to `public/index.html`:**
+   ```html
+   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+   ```
+
+### Hotjar (Optional)
+
+1. **Update analytics config** with your Hotjar ID
+2. **Add Hotjar script** to `public/index.html`
+
+## 🎨 Customization
+
+### Colors & Branding
+
+Update CSS custom properties in `src/index.css`:
+
+```css
+:root {
+  --primary-blue: #1e3a8a;    /* Your primary brand color */
+  --secondary-blue: #3b82f6;   /* Secondary color */
+  --accent-cyan: #06b6d4;      /* Accent color */
+  /* ... other colors */
+}
+```
+
+### Content Updates
+
+All website content is now centralized for easy management:
+
+- **All text content:** Edit `src/config/content.js`
+- **Job listings:** Edit `JOB_OPENINGS` in `src/config/constants.js`
+- **Company stats:** Update `STATS` array in `src/config/constants.js`
+- **Company info & social links:** Update `src/config/constants.js`
+
+**Content Configuration Structure:**
+```javascript
+// src/config/content.js
+export const CONTENT = {
+  home: { hero: {...}, features: {...}, cta: {...} },
+  about: { header: {...}, mission: {...}, services: {...} },
+  careers: { header: {...}, jobs: {...}, culture: {...} },
+  leadership: { header: {...}, team: {...}, expertise: {...} },
+  contact: { header: {...}, form: {...}, info: {...} },
+  ui: { buttons: {...}, placeholders: {...} }
+};
+```
+
+## 🚨 Important Notes
+
+### Current State
+- ✅ Content vanishing issue fixed
+- ✅ Footer compacted and standardized
+- ✅ Emojis replaced with placeholder icons
+- ✅ Careers simplified to 2 roles
+- ✅ Centralized configuration system
+
+### Next Steps
+1. Replace placeholder icons with actual assets
+2. Configure email service
+3. Add social media URLs
+4. Set up analytics
+5. Add team photos and information
+
+## 🛠️ Deployment
+
+### Netlify (Recommended)
+1. Connect your GitHub repository
+2. Build command: `npm run build`
+3. Publish directory: `build`
+4. Deploy!
+
+### Vercel
+1. Install Vercel CLI: `npm i -g vercel`
+2. Run: `vercel`
+3. Follow the prompts
+
+### Traditional Hosting
+1. Run: `npm run build`
+2. Upload the `build` folder contents to your web server
+
+## 📞 Support
+
+For questions about this codebase:
+- Check the configuration files in `src/config/`
+- Review component structure in `src/components/` and `src/pages/`
+- All placeholder content is clearly marked for easy replacement
+
+## 🔄 Updates
+
+This website is designed to be easily maintainable:
+- All configuration is centralized in `src/config/constants.js`
+- Icons are placeholder-based for easy replacement
+- Responsive design works on all devices
+- Modern React patterns for easy updates
+
+---
+
+**Built with React, modern CSS, and professional design principles.**

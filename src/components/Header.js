@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,57 +16,159 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location]);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
-  const navigation = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Leadership', path: '/leadership' },
-    { name: 'Careers', path: '/careers' },
-    { name: 'Contact Us', path: '/contact' },
-  ];
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const isActiveLink = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
-        <div className="header-content">
-          <Link to="/" className="logo">
-            <div className="logo-content">
-              <div className="logo-icon">PDS</div>
-              <div className="logo-text">
-                <span className="logo-main">Predictive Data Sciences</span>
-                <span className="logo-sub">Advanced Analytics Solutions</span>
+        <div className="header-container">
+          {/* Logo Section */}
+          <div className="logo-section">
+            <Link to="/" className="logo" onClick={closeMobileMenu}>
+              <div className="logo-icon">
+                P
               </div>
-            </div>
-          </Link>
+              <span className="logo-text">Predictive Data Sciences</span>
+            </Link>
+          </div>
 
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+          {/* Desktop Navigation */}
+          <nav className="nav">
             <ul className="nav-list">
-              {navigation.map((item) => (
-                <li key={item.name} className="nav-item">
-                  <Link
-                    to={item.path}
-                    className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
+              <li className="nav-item">
+                <Link
+                  to="/"
+                  className={`nav-link ${isActiveLink('/') ? 'active' : ''}`}
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/about"
+                  className={`nav-link ${isActiveLink('/about') ? 'active' : ''}`}
+                >
+                  About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/leadership"
+                  className={`nav-link ${isActiveLink('/leadership') ? 'active' : ''}`}
+                >
+                  Leadership
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/careers"
+                  className={`nav-link ${isActiveLink('/careers') ? 'active' : ''}`}
+                >
+                  Careers
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/contact"
+                  className={`nav-link ${isActiveLink('/contact') ? 'active' : ''}`}
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
 
+          {/* Desktop CTA */}
+          <div className="header-cta">
+            <Link to="/contact" className="btn btn-outline">
+              Get Started
+            </Link>
+            <Link to="/about" className="btn btn-primary">
+              Learn More
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
           <button
-            className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
           >
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
+
+        {/* Mobile Navigation */}
+        <nav className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
+          <ul className="mobile-nav-list">
+            <li className="mobile-nav-item">
+              <Link
+                to="/"
+                className={`mobile-nav-link ${isActiveLink('/') ? 'active' : ''}`}
+                onClick={closeMobileMenu}
+              >
+                Home
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
+              <Link
+                to="/about"
+                className={`mobile-nav-link ${isActiveLink('/about') ? 'active' : ''}`}
+                onClick={closeMobileMenu}
+              >
+                About
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
+              <Link
+                to="/leadership"
+                className={`mobile-nav-link ${isActiveLink('/leadership') ? 'active' : ''}`}
+                onClick={closeMobileMenu}
+              >
+                Leadership
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
+              <Link
+                to="/careers"
+                className={`mobile-nav-link ${isActiveLink('/careers') ? 'active' : ''}`}
+                onClick={closeMobileMenu}
+              >
+                Careers
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
+              <Link
+                to="/contact"
+                className={`mobile-nav-link ${isActiveLink('/contact') ? 'active' : ''}`}
+                onClick={closeMobileMenu}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+
+          <div className="mobile-cta">
+            <Link to="/contact" className="btn btn-outline" onClick={closeMobileMenu}>
+              Get Started
+            </Link>
+            <Link to="/about" className="btn btn-primary" onClick={closeMobileMenu}>
+              Learn More
+            </Link>
+          </div>
+        </nav>
       </div>
     </header>
   );
