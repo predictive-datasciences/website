@@ -1,151 +1,184 @@
 // Configuration file for easy management of links, assets, and integrations
 // Update these values to customize your website
 
+// Modern 2025 Constants Configuration
 export const COMPANY_INFO = {
   name: "Predictive Data Sciences",
-  tagline: "Creating the future of big data through innovative predictive analytics solutions",
-  description: "Predictive Data Sciences offers innovative solutions through emerging methodologies combined with deep experience and cutting-edge innovation.",
-  email: "info@predictivedatasciences.com", // Placeholder - replace with actual email
-  phone: "+1 (555) 123-4567", // Placeholder - replace with actual phone
+  tagline: "Transforming Fintech with AI-Powered Solutions",
+  description: "We specialize in delivering cutting-edge AI and data science solutions for fintech companies, from startups to enterprise-scale organizations.",
+  founded: "2015",
+  email: "contact@predictive-data-sciences.com",
+  phone: "+1 (619) 123-4567",
+  website: "https://predictive-data-sciences.com",
 
-  // Social Links
-  socialLinks: {
-    linkedin: "https://linkedin.com/company/predictive-data-sciences", // Placeholder - replace with actual
-    // twitter: "", // Removed as requested
-    // facebook: "", // Add if needed
-    // instagram: "", // Add if needed
-  },
-
-  // Office Locations
-  offices: [
-    {
-      city: "Chennai",
-      state: "Tamil Nadu",
-      country: "India",
-      isHeadquarters: true
+  offices: {
+    headquarters: {
+      name: "Headquarters",
+      address: "Chennai, Tamil Nadu, India",
+      phone: "+91 44 1234 5678",
+      email: "india@predictive-data-sciences.com"
     },
-    {
-      city: "San Diego",
-      state: "CA",
-      country: "United States",
-      isHeadquarters: false
+    usa: {
+      name: "US Office",
+      address: "San Diego, CA, USA",
+      phone: "+1 (619) 123-4567",
+      email: "usa@predictive-data-sciences.com"
     }
-  ],
-
-  // Company Details
-  founded: "2014",
-  industry: "Financial Services",
-  companySize: "2-10 employees",
-
-  // Founder Information
-  founder: {
-    name: "Krishna Gopinathan",
-    title: "Founder & CEO",
-    experience: "24 years of experience in predictive analytics and data science",
-    background: "Founder of Global Analytics India, original inventor of Falcon (HNC/Fair Isaac's fraud detection system), serial entrepreneur",
-    linkedin: "http://www.linkedin.com/in/krishnagopinathan"
   }
 };
 
-export const SOCIAL_LINKS = {
-  linkedin: "https://linkedin.com/company/predictive-data-sciences", // Placeholder - replace with actual
-  // twitter: "", // Removed as requested
-  // facebook: "", // Add if needed
-  // instagram: "", // Add if needed
-};
-
+// High-Quality Asset URLs (Unsplash & Professional Images)
 export const ASSETS = {
-  logo: "/assets/logo.png", // Placeholder path
-  founderPhoto: "/assets/krishna-gopinathan.jpg", // Placeholder path
-  companyPhotos: {
-    office: "/assets/office.jpg",
-    team: "/assets/team.jpg",
-    meeting: "/assets/meeting.jpg"
+  company: {
+    logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=200&fit=crop&crop=center",
+    logoWhite: "/assets/images/logo-white.png",
+    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop&crop=center",
+    aboutImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&crop=center",
+    officeChennai: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
+    officeSanDiego: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop"
   },
-  icons: {
-    // Add paths to actual icon files when available
-    dataScience: "/assets/icons/data-science.svg",
-    fraud: "/assets/icons/fraud-detection.svg",
-    analytics: "/assets/icons/analytics.svg"
+
+  services: {
+    losFintech: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop&crop=center",
+    uiuxDevelopment: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop&crop=center",
+    aiRiskModels: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop&crop=center",
+    businessConsultancy: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center",
+    dataAnalytics: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
+    aiIntegration: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop&crop=center"
+  },
+
+  team: {
+    krishna: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    placeholder: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+  },
+
+  backgrounds: {
+    hero: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop&crop=center",
+    testimonials: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=1080&fit=crop&crop=center",
+    cta: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1920&h=1080&fit=crop&crop=center",
+    about: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop&crop=center"
+  },
+
+  technology: {
+    aiDashboard: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center",
+    blockchain: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center",
+    fintech: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center",
+    analytics: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
+  },
+
+  clients: {
+    financeFlow: "https://via.placeholder.com/200x80/667eea/ffffff?text=FinanceFlow",
+    lendTech: "https://via.placeholder.com/200x80/764ba2/ffffff?text=LendTech",
+    megaBank: "https://via.placeholder.com/200x80/4facfe/ffffff?text=MegaBank",
+    neoBank: "https://via.placeholder.com/200x80/f093fb/ffffff?text=NeoBank"
   }
 };
 
+// Rolling Statistics
 export const STATS = [
-  { number: '300M+', label: 'Loans Originated' },
-  { number: '20+', label: 'Years Experience' },
-  { number: '100+', label: 'Patents Filed' },
-  { number: '382+', label: 'Patent References' },
-  { number: '50+', label: 'Enterprise Clients' },
-  { number: '99.8%', label: 'Accuracy Rate' }
+  { number: "200+", label: "Clients Served" },
+  { number: "50M+", label: "Transactions Processed" },
+  { number: "99.2%", label: "Model Accuracy" },
+  { number: "24/7", label: "Support Available" },
+  { number: "15+", label: "Years Experience" },
+  { number: "98%", label: "Client Satisfaction" },
+  { number: "500+", label: "Projects Delivered" },
+  { number: "25+", label: "AI Models Deployed" }
 ];
 
+// Job Openings
 export const JOB_OPENINGS = [
   {
-    title: "Full Stack Developer",
+    id: 1,
+    title: "Senior Full Stack Developer",
     department: "Engineering",
-    location: "Remote", // Updated to Remote
+    location: "Remote",
     type: "Full-time",
-    description: "Join our engineering team to build scalable fintech platforms and data-driven applications that serve millions of users.",
+    experience: "5+ years",
+    description: "Lead the development of cutting-edge fintech applications using modern technologies and AI integration.",
     requirements: [
-      "5+ years of experience in full-stack development",
-      "Proficiency in React, Node.js, and modern JavaScript frameworks",
-      "Experience with cloud platforms (AWS, Azure, or GCP)",
-      "Strong understanding of database design and optimization",
-      "Knowledge of RESTful APIs and microservices architecture",
-      "Experience with version control systems (Git)",
-      "Bachelor's degree in Computer Science or related field"
+      "5+ years of full-stack development experience",
+      "Expertise in React, Node.js, and cloud platforms",
+      "Experience with fintech and payment systems",
+      "Strong understanding of security best practices",
+      "Knowledge of AI/ML integration is a plus"
     ],
     responsibilities: [
-      "Develop and maintain web applications using modern technologies",
-      "Collaborate with data scientists to implement ML models in production",
-      "Design and implement scalable backend services and APIs",
-      "Optimize application performance and ensure high availability",
-      "Participate in code reviews and maintain coding standards",
-      "Work closely with product team to translate requirements into technical solutions",
-      "Contribute to architectural decisions and technical strategy"
+      "Architect and develop scalable fintech applications",
+      "Integrate AI models into production systems",
+      "Collaborate with data science and product teams",
+      "Ensure security and compliance standards",
+      "Mentor junior developers and code review"
+    ],
+    benefits: [
+      "Competitive salary and equity package",
+      "Flexible remote work arrangements",
+      "Health and wellness benefits",
+      "Professional development opportunities",
+      "Cutting-edge technology stack"
     ]
   },
   {
-    title: "Data Scientist",
+    id: 2,
+    title: "Senior Data Scientist - AI Risk Models",
     department: "Data Science",
-    location: "Remote", // Updated to Remote
+    location: "Remote",
     type: "Full-time",
-    description: "Lead the development of cutting-edge predictive models and machine learning solutions for fraud detection and risk assessment.",
+    experience: "4+ years",
+    description: "Develop and deploy advanced AI risk models for financial services, focusing on credit risk, fraud detection, and regulatory compliance.",
     requirements: [
-      "PhD or Master's in Data Science, Statistics, Mathematics, or related field",
-      "5+ years of experience in machine learning and predictive modeling",
-      "Expertise in Python, R, and SQL",
-      "Experience with ML frameworks (TensorFlow, PyTorch, scikit-learn)",
-      "Strong background in statistical analysis and hypothesis testing",
-      "Experience with big data technologies (Spark, Hadoop)",
-      "Knowledge of financial services and risk modeling preferred"
+      "4+ years of data science experience in fintech",
+      "PhD/Masters in Statistics, Mathematics, or Computer Science",
+      "Expertise in Python, R, and machine learning frameworks",
+      "Experience with risk modeling and regulatory requirements",
+      "Strong statistical analysis and model validation skills"
     ],
     responsibilities: [
-      "Develop and deploy machine learning models for fraud detection",
-      "Conduct advanced statistical analysis on large datasets",
-      "Collaborate with engineering team to productionize ML models",
-      "Research and implement state-of-the-art algorithms",
-      "Present findings and recommendations to stakeholders",
-      "Mentor junior data scientists and contribute to best practices",
-      "Stay current with latest developments in ML and data science"
+      "Design and implement AI-powered risk assessment models",
+      "Validate model performance and ensure regulatory compliance",
+      "Collaborate with engineering teams on model deployment",
+      "Research and implement cutting-edge ML techniques",
+      "Present findings to stakeholders and regulatory bodies"
+    ],
+    benefits: [
+      "Competitive salary and performance bonuses",
+      "Flexible remote work with occasional travel",
+      "Conference attendance and research opportunities",
+      "Access to latest ML tools and cloud platforms",
+      "Collaborative and innovative work environment"
     ]
   }
 ];
 
-// Email service configuration (for future integration)
+// Email Configuration (Ready for EmailJS integration)
 export const EMAIL_CONFIG = {
-  // UPDATE: Configure your email service
-  service: "emailjs", // or "sendgrid", "mailgun", etc.
-  serviceId: "YOUR_SERVICE_ID", // EmailJS service ID
-  templateId: "YOUR_TEMPLATE_ID", // EmailJS template ID
-  publicKey: "YOUR_PUBLIC_KEY" // EmailJS public key
+  serviceId: "your_emailjs_service_id", // Replace with actual EmailJS service ID
+  templateId: "your_emailjs_template_id", // Replace with actual EmailJS template ID
+  publicKey: "your_emailjs_public_key" // Replace with actual EmailJS public key
 };
 
-// Analytics configuration (for future integration)
+// Analytics Configuration
 export const ANALYTICS_CONFIG = {
-  // UPDATE: Add your analytics IDs
-  googleAnalyticsId: "GA_MEASUREMENT_ID",
-  hotjarId: "HOTJAR_ID"
+  googleAnalyticsId: "G-XXXXXXXXXX", // Replace with actual GA4 measurement ID
+  hotjarId: "your_hotjar_id" // Replace with actual Hotjar site ID
+};
+
+// Navigation Menu Items
+export const NAVIGATION = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Leadership", href: "/leadership" },
+  { name: "Careers", href: "/careers" },
+  { name: "Contact", href: "/contact" }
+];
+
+// Feature Flags (for easy enabling/disabling of features)
+export const FEATURES = {
+  cookieConsent: true,
+  analytics: false, // Set to true when analytics is configured
+  emailIntegration: false, // Set to true when EmailJS is configured
+  chatBot: false, // Future feature
+  darkMode: false // Future feature
 };
 
 // Company Statistics for Rolling Bar

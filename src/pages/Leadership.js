@@ -49,7 +49,7 @@ const Leadership = () => {
   }, []);
 
   return (
-    <div className="leadership">
+    <div className="leadership page-sky-blue">
       {/* Header Section */}
       <section className="leadership-header section bg-gradient-hero">
         <div className="container">
@@ -58,11 +58,11 @@ const Leadership = () => {
             data-animate
             className={`leadership-intro text-center ${isVisible['leadership-intro'] ? 'animate-fadeInUp' : ''}`}
           >
-            <h1>{CONTENT.leadership.hero.title}</h1>
-            <p className="leadership-tagline text-large mb-6">
+            <h1 className="page-title-white">{CONTENT.leadership.hero.title}</h1>
+            <p className="page-subtitle-white text-large mb-6">
               {CONTENT.leadership.hero.subtitle}
             </p>
-            <p className="leadership-description text-large">
+            <p className="page-description-white text-large">
               {CONTENT.leadership.header.description}
             </p>
           </div>
@@ -70,7 +70,7 @@ const Leadership = () => {
       </section>
 
       {/* Founder Section */}
-      <section className="founder-section section bg-primary-light">
+      <section className="founder-section section">
         <div className="container">
           <div
             id="founder-section"
@@ -118,7 +118,7 @@ const Leadership = () => {
       </section>
 
       {/* Company Information */}
-      <section className="company-info section bg-white">
+      <section className="company-info section">
         <div className="container">
           <div
             id="company-info"
@@ -142,16 +142,16 @@ const Leadership = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section section bg-gradient-primary">
+      <section className="cta-section section">
         <div className="container">
           <div className="cta-content text-center">
             <h2>{CONTENT.leadership.cta.title}</h2>
             <p className="text-large mb-8">{CONTENT.leadership.cta.description}</p>
             <div className="cta-actions flex gap-4 justify-center">
-              <Link to="/contact" className="btn btn-secondary btn-xl">
+              <Link to="/contact" className="btn btn-primary btn-xl">
                 {CONTENT.leadership.cta.primaryButton}
               </Link>
-              <Link to="/about" className="btn btn-outline-white btn-xl">
+              <Link to="/about" className="btn btn-outline btn-xl">
                 {CONTENT.leadership.cta.secondaryButton}
               </Link>
             </div>

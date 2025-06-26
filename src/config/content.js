@@ -1,528 +1,383 @@
-// Content configuration file for easy text management
-// Update these values to customize website content
-
+// Modern 2025 Website Content Configuration
 export const CONTENT = {
   // Company Information
   company: {
     name: "Predictive Data Sciences",
-    tagline: "AI-Powered Risk Intelligence and Predictive Analytics for Financial Services",
-    description: "Shaping the future of financial services through advanced AI-driven predictive analytics"
+    tagline: "Transforming Fintech with AI-Powered Solutions",
+    description: "We specialize in delivering cutting-edge AI and data science solutions for fintech companies, from startups to enterprise-scale organizations.",
+    founded: "2015",
+    employees: "50+",
+    clients: "200+",
+    headquarters: "Chennai, Tamil Nadu, India",
+    secondaryOffice: "San Diego, CA, USA"
   },
 
-  // Homepage Content
-  home: {
-    hero: {
-      title: "AI-Driven Predictive Analytics for Financial Services",
-      subtitle: "Redefining risk intelligence and fraud prevention with cutting-edge machine learning and data science solutions",
-      cta: {
-        primary: "Explore Our Solutions",
-        secondary: "Learn More"
-      }
-    },
-
-    services: {
-      title: "Our Core Services",
-      subtitle: "Comprehensive, AI-enabled solutions for modern financial challenges",
-      items: [
-        {
-          title: "Risk Assessment & Credit Scoring",
-          description: "AI-powered risk models delivering precise credit evaluations for smarter decision-making"
-        },
-        {
-          title: "Fraud Detection Systems",
-          description: "Real-time fraud prevention leveraging behavioral analytics and machine learning"
-        },
-        {
-          title: "Loan Origination Systems (LOS)",
-          description: "Automated, intelligent lending platforms with integrated risk assessment engines"
-        }
-      ]
-    },
-
-    stats: {
-      title: "Proven Excellence",
-      items: [
-        { label: "Years of Experience", value: "24+" },
-        { label: "Patents Filed", value: "10+" },
-        { label: "Clients Served", value: "50+" },
-        { label: "Data Points Processed", value: "1B+" },
-        { label: "Models Deployed", value: "100+" },
-        { label: "Countries Served", value: "15+" }
-      ]
-    },
-
+  // Hero Section
+  hero: {
+    badge: "🚀 Leading Fintech AI Solutions",
+    title: "Revolutionize Your Fintech Business with AI",
+    subtitle: "We empower financial technology companies with advanced AI models, seamless UI/UX design, and comprehensive business consulting to drive growth and innovation.",
     cta: {
-      title: "Ready to Transform Your Risk Intelligence?",
-      description: "Join leading institutions leveraging our AI-powered predictive analytics to redefine risk assessment",
-      button: "Get Started Today"
-    }
+      primary: "Start Your AI Journey",
+      secondary: "Explore Our Solutions"
+    },
+    stats: [
+      { number: "200+", label: "Fintech Clients" },
+      { number: "99.2%", label: "Model Accuracy" },
+      { number: "50M+", label: "Transactions Processed" }
+    ]
   },
 
-  // About Page Content
+  // Services Section
+  services: {
+    title: "Specialized Fintech Solutions",
+    subtitle: "From AI-powered risk models to intuitive user experiences, we deliver comprehensive solutions that drive fintech innovation.",
+    items: [
+      {
+        icon: "🏦",
+        title: "LOS for Fintechs",
+        description: "Complete Loan Origination Systems tailored for fintech companies, featuring automated underwriting, risk assessment, and seamless integration capabilities.",
+        features: ["Automated Underwriting", "Risk Scoring", "API Integration", "Compliance Management"]
+      },
+      {
+        icon: "🎨",
+        title: "UI/UX Development",
+        description: "User-centric design solutions that enhance customer experience and drive engagement in financial applications.",
+        features: ["Mobile-First Design", "User Research", "Prototyping", "Accessibility Standards"]
+      },
+      {
+        icon: "🤖",
+        title: "AI Risk Models",
+        description: "Advanced machine learning models for credit risk assessment, fraud detection, and regulatory compliance in financial services.",
+        features: ["Credit Scoring", "Fraud Detection", "Regulatory Compliance", "Real-time Analytics"]
+      },
+      {
+        icon: "💼",
+        title: "Business Consultancy",
+        description: "Strategic consulting services to help fintech companies scale, optimize operations, and navigate regulatory challenges.",
+        features: ["Strategic Planning", "Market Analysis", "Regulatory Guidance", "Growth Optimization"]
+      },
+      {
+        icon: "📊",
+        title: "Data Analytics",
+        description: "Comprehensive data analytics solutions to unlock insights from financial data and drive informed decision-making.",
+        features: ["Predictive Analytics", "Customer Insights", "Performance Metrics", "Reporting Dashboards"]
+      },
+      {
+        icon: "🔐",
+        title: "Compliance Solutions",
+        description: "Automated compliance monitoring and reporting systems to ensure adherence to financial regulations and standards.",
+        features: ["KYC/AML Solutions", "Regulatory Reporting", "Audit Trails", "Risk Monitoring"]
+      }
+    ]
+  },
+
+  // Testimonials
+  testimonials: [
+    {
+      quote: "Predictive Data Sciences transformed our lending platform with their AI models. Our approval rates improved by 40% while reducing risk.",
+      name: "Sarah Johnson",
+      position: "CTO",
+      company: "Fintech Startup",
+      rating: 5
+    },
+    {
+      quote: "Their UI/UX expertise helped us create an intuitive platform that our customers love. User engagement increased by 60%.",
+      name: "Michael Chen",
+      position: "Product Manager",
+      company: "Digital Bank",
+      rating: 5
+    },
+    {
+      quote: "The compliance solutions provided by PDS saved us months of development time and ensured regulatory adherence.",
+      name: "Emily Rodriguez",
+      position: "Chief Compliance Officer",
+      company: "Investment Platform",
+      rating: 5
+    }
+  ],
+
+  // CTA Section
+  cta: {
+    title: "Ready to Transform Your Fintech Business?",
+    subtitle: "Join 200+ fintech companies that trust us to deliver cutting-edge AI solutions.",
+    button: "Start Your AI Journey"
+  },
+
+  // About Page
   about: {
     hero: {
       title: "About Predictive Data Sciences",
-      subtitle: "Pioneering the future of financial services with intelligent predictive analytics and AI"
+      subtitle: "Leading Fintech Innovation Since 2015"
     },
-
     mission: {
-      title: "Why Predictive Data Sciences Matters",
+      title: "Our Mission",
       content: [
-        "Millions of individuals and small businesses worldwide remain underserved by traditional credit systems. Even years after the 2008 financial crisis, access to financing remains a challenge.",
-        "Addressing this gap requires more than conventional methods—it demands intelligent, AI-based approaches to assess creditworthiness and detect fraud in real time.",
-        "Predictive Data Sciences delivers innovative solutions by fusing cutting-edge machine learning methodologies with deep domain expertise. Our name reflects our commitment to data science—not just analytics.",
-        "Our leadership comprises pioneers in data-driven financial services, known for solving some of the industry's toughest problems. We bring fresh perspectives to every challenge—because solving tomorrow's risks demands tomorrow's thinking."
+        "We democratize access to advanced AI and data science capabilities for fintech companies of all sizes. Our mission is to empower financial technology companies with the tools and expertise they need to thrive in an increasingly competitive landscape.",
+        "From early-stage startups building their first product to established enterprises scaling their operations, we provide tailored solutions that drive real business impact and sustainable growth."
       ]
     },
-
-    overview: {
-      title: "Company Overview",
-      description: "Predictive Data Sciences is an innovative startup founded by Krishna Gopinathan, creator of Falcon—the core of HNC/Fair Isaac's acclaimed fraud detection engine. With over two decades of experience, Krishna has built a legacy of AI innovation in financial services.",
-      details: {
-        website: "http://www.linkedin.com/in/krishnagopinathan",
-        industry: "Financial Services",
-        companySize: "2–10 employees",
-        associates: "3 associated members",
-        founded: "2014",
-        offices: [
-          "Chennai, Tamil Nadu, India",
-          "San Diego, United States"
-        ]
-      }
-    },
-
     services: {
-      title: "Our Complete Service Portfolio",
-      subtitle: "End-to-end AI solutions tailored for the evolving landscape of risk and financial decision-making",
+      title: "Our Comprehensive Services",
+      subtitle: "We offer end-to-end solutions tailored for the fintech industry",
       items: [
         {
-          title: "Advanced Risk Assessment",
-          description: "AI-driven credit evaluation using robust machine learning algorithms",
-          longDescription: "We use advanced machine learning and big data analytics to deliver precise credit risk evaluations. Our solutions help institutions expand access while managing risk effectively.",
+          title: "AI-Powered Risk Assessment",
+          description: "Advanced machine learning models for credit scoring and fraud detection.",
+          longDescription: "Our proprietary AI models leverage vast datasets and cutting-edge algorithms to provide accurate risk assessments. We specialize in real-time fraud detection, credit scoring, and regulatory compliance solutions that help fintech companies make informed decisions while minimizing risk exposure.",
           details: [
-            "Credit scoring with machine learning models",
-            "Alternative data for thin-file applicants",
-            "Real-time risk APIs",
-            "Regulatory-compliant modeling",
-            "Custom credit policy frameworks"
-          ]
-        },
-        {
-          title: "Fraud Detection & Prevention",
-          description: "Real-time fraud detection powered by behavioral analytics and AI",
-          longDescription: "Our fraud solutions combine AI-driven anomaly detection with behavioral analytics, ensuring high-accuracy fraud prevention across channels. Built on the legacy of Falcon, our systems adapt and evolve with every transaction.",
-          details: [
-            "Live transaction surveillance",
-            "Behavioral biometrics and device profiling",
-            "Anomaly detection using ML",
-            "Layered fraud prevention strategies",
-            "Adaptive learning mechanisms"
+            "Real-time fraud detection with 99.2% accuracy",
+            "Credit scoring models trained on diverse datasets",
+            "Regulatory compliance automation",
+            "Custom risk assessment frameworks",
+            "Integration with existing systems"
           ]
         },
         {
           title: "Loan Origination Systems",
-          description: "Intelligent LOS platforms with embedded risk models",
-          longDescription: "We offer seamless, automated loan origination platforms with integrated AI-powered risk engines and document handling capabilities for a compliant, efficient lending experience.",
+          description: "Complete LOS solutions designed specifically for fintech companies.",
+          longDescription: "Our Loan Origination Systems streamline the entire lending process from application to approval. Built with modern architecture and designed for scalability, our LOS solutions integrate seamlessly with existing fintech infrastructure while providing advanced automation capabilities.",
           details: [
-            "Automated loan lifecycle management",
-            "Integrated credit decisioning systems",
-            "Document verification and audit tracking",
-            "Regulatory and compliance features",
-            "User-friendly interfaces for mobile and web"
+            "Automated underwriting processes",
+            "Multi-channel application processing",
+            "Document management and verification",
+            "Workflow automation and approval chains",
+            "API-first architecture for easy integration"
           ]
         },
         {
-          title: "Fintech Platform Development",
-          description: "Customized AI-enabled fintech platform development",
-          longDescription: "We design and develop scalable, cloud-native fintech platforms that solve complex business problems through intelligent automation and data science.",
+          title: "UI/UX Design & Development",
+          description: "User-centric design solutions that enhance customer experience.",
+          longDescription: "We create intuitive, engaging user experiences that drive customer satisfaction and business growth. Our design team specializes in fintech applications, understanding the unique challenges of financial user interfaces and regulatory requirements.",
           details: [
-            "Custom-built fintech applications",
-            "API-first architecture for rapid integration",
-            "Secure and scalable infrastructure",
-            "Ecosystem integrations",
-            "Compliance-first architecture"
+            "Mobile-first responsive design",
+            "User research and persona development",
+            "Accessibility compliance (WCAG 2.1)",
+            "Conversion optimization",
+            "Design system development"
           ]
         },
         {
-          title: "Predictive Analytics Consulting",
-          description: "Strategic consulting to unlock AI-driven decision-making",
-          longDescription: "Our consulting engagements focus on data strategy, predictive modeling, and governance. We help institutions transition to a data-native, AI-first decision framework.",
+          title: "Business Intelligence & Analytics",
+          description: "Comprehensive data analytics solutions for informed decision-making.",
+          longDescription: "Transform your data into actionable insights with our advanced analytics platform. We help fintech companies understand their customers, optimize operations, and identify growth opportunities through sophisticated data analysis and visualization.",
           details: [
-            "Analytics strategy and roadmap",
-            "Model development and validation",
-            "Reporting and business intelligence",
-            "Data governance frameworks",
-            "Training and capability building"
+            "Real-time dashboard development",
+            "Predictive analytics and forecasting",
+            "Customer behavior analysis",
+            "Performance metrics and KPI tracking",
+            "Custom reporting solutions"
           ]
         },
         {
-          title: "Data Science & AI Solutions",
-          description: "Custom-built AI models tailored to financial use cases",
-          longDescription: "From NLP to computer vision, our AI solutions empower financial institutions to automate, analyze, and act with intelligence. We handle everything from model design to monitoring.",
+          title: "Compliance & Regulatory Solutions",
+          description: "Automated compliance monitoring and reporting systems.",
+          longDescription: "Navigate the complex regulatory landscape with confidence. Our compliance solutions automate monitoring, reporting, and audit processes while ensuring adherence to financial regulations and industry standards.",
           details: [
-            "Bespoke machine learning models",
-            "NLP for document understanding",
-            "Computer vision for KYC and fraud prevention",
-            "Autonomous decision engines",
-            "Model lifecycle monitoring and tuning"
+            "KYC/AML automation",
+            "Regulatory reporting tools",
+            "Audit trail management",
+            "Risk monitoring systems",
+            "Compliance workflow automation"
+          ]
+        },
+        {
+          title: "Strategic Consulting",
+          description: "Expert guidance to help fintech companies scale and optimize operations.",
+          longDescription: "Leverage our deep industry expertise to accelerate your growth. Our consulting services cover strategy development, market analysis, technology roadmapping, and operational optimization specifically tailored for fintech companies.",
+          details: [
+            "Go-to-market strategy development",
+            "Technology architecture planning",
+            "Regulatory strategy guidance",
+            "Market analysis and competitive intelligence",
+            "Operational efficiency optimization"
           ]
         }
       ]
     },
-
     whyChooseUs: {
-      title: "Why Predictive Data Sciences?",
-      subtitle: "Intelligence, Innovation, Impact",
+      title: "Why Choose Predictive Data Sciences",
+      subtitle: "We bring unique advantages to every fintech partnership",
       items: [
         {
-          title: "Proven Expertise",
-          description: "Over 24 years of success in building and deploying AI models for credit risk, fraud, and financial intelligence."
+          title: "Deep Fintech Expertise",
+          description: "Over 10 years of specialized experience in financial technology, understanding the unique challenges and opportunities in the industry."
         },
         {
-          title: "Innovation Leadership",
-          description: "Inventor of Falcon—the industry-standard in fraud detection. We continue that legacy through constant innovation."
+          title: "Proven Track Record",
+          description: "Successfully delivered 200+ projects for fintech companies ranging from startups to enterprise-scale organizations."
         },
         {
-          title: "Financial Domain Focus",
-          description: "Deep specialization in finance, ensuring all solutions meet regulatory, operational, and strategic demands."
+          title: "Cutting-Edge Technology",
+          description: "We leverage the latest AI/ML technologies and maintain expertise in emerging fintech trends and regulatory requirements."
         },
         {
-          title: "Tailored AI Solutions",
-          description: "We reject one-size-fits-all models. Every engagement is bespoke, every model custom-built for performance and relevance."
+          title: "End-to-End Solutions",
+          description: "From initial concept to full deployment and ongoing support, we provide comprehensive solutions that scale with your business."
         }
       ]
     },
-
     approach: {
       title: "Our Approach",
-      subtitle: "AI-first thinking. Human-centered design. Real-world outcomes.",
+      subtitle: "A methodology refined through years of fintech innovation",
       items: [
         {
-          title: "Data Science Excellence",
-          description: "We go beyond standard analytics—delivering true data science rooted in statistical rigor and ML innovation."
+          title: "Discovery & Strategy",
+          description: "We begin by understanding your business goals, technical requirements, and regulatory constraints to develop a comprehensive strategy."
         },
         {
-          title: "Innovation First",
-          description: "Every solution starts fresh, not from templates. Innovation is how we drive lasting impact."
+          title: "Design & Development",
+          description: "Our agile development process ensures rapid iteration and continuous feedback, delivering solutions that meet your exact needs."
         },
         {
-          title: "Veteran Leadership",
-          description: "Led by pioneers in the field, we bring experience and foresight to every challenge."
-        },
-        {
-          title: "Co-Creation & Partnership",
-          description: "We work closely with clients to develop solutions that truly solve problems at scale."
+          title: "Deployment & Optimization",
+          description: "We handle seamless deployment and provide ongoing optimization to ensure peak performance and scalability."
         }
       ]
     },
-
     industries: {
       title: "Industries We Serve",
-      subtitle: "From retail lending to neobanks—our predictive analytics adapt to every financial vertical's unique needs",
+      subtitle: "Specialized solutions across the fintech ecosystem",
       items: [
-        "Fintech & Digital Banking",
-        "Traditional Banking",
-        "Insurance Companies",
-        "Investment Firms",
+        "Digital Banking",
         "Lending Platforms",
-        "Payment Processors",
-        "Credit Unions",
-        "Wealth Management"
+        "Investment Technology",
+        "Payment Solutions",
+        "Wealth Management",
+        "Insurance Technology",
+        "Cryptocurrency",
+        "RegTech Solutions"
       ]
-    },
-
-    cta: {
-      title: "Start Your AI Journey with Us",
-      description: "Connect with us to explore how our advanced analytics and machine learning solutions can unlock new opportunities for your business.",
-      primaryButton: "Contact Us",
-      secondaryButton: "Meet Our Team"
     }
   },
 
-  // Careers Page Content
-  careers: {
-    hero: {
-      title: "Join the AI Revolution",
-      subtitle: "Redefine the future of financial services through cutting-edge data science",
-      description: "We're building a world-class team of thinkers, creators, and builders passionate about AI, fintech, and innovation."
-    },
-
-    jobs: {
-      title: "Open Roles",
-      subtitle: "Join us and help build intelligent systems that impact millions"
-    },
-
-    culture: {
-      title: "Life at Predictive Data Sciences",
-      subtitle: "A culture of deep thinking, fast execution, and meaningful impact",
-      values: [
-        {
-          title: "Innovation",
-          description: "We challenge the status quo to find better, smarter, faster ways of solving problems."
-        },
-        {
-          title: "Excellence",
-          description: "From code to models to relationships—we hold ourselves to the highest standards."
-        },
-        {
-          title: "Collaboration",
-          description: "We grow by learning from each other and our clients."
-        },
-        {
-          title: "Growth",
-          description: "We invest in every team member's career, learning, and well-being."
-        }
-      ]
-    },
-
-    benefits: {
-      title: "Benefits & Perks",
-      items: [
-        "Remote-first team culture",
-        "Equity options for long-term ownership",
-        "Learning & development budget",
-        "Flexible vacation policy",
-        "Top-tier gear and software"
-      ]
-    },
-
-    cta: {
-      title: "Can't Find Your Role?",
-      description: "We're always hiring for talent and passion. Send us your resume—we'd love to hear from you.",
-      primaryButton: "Reach Out",
-      secondaryButton: "Explore Our Work"
-    }
-  },
-
-  // Leadership Page Content
+  // Leadership Page
   leadership: {
     hero: {
-      title: "Our Leadership",
-      subtitle: "Driving innovation in AI and predictive analytics"
+      title: "Leadership",
+      subtitle: "Visionary Leadership Driving Fintech Innovation"
     },
-
+    header: {
+      description: "Meet our experienced leadership team that's driving innovation in fintech AI solutions and shaping the future of financial technology."
+    },
     founder: {
       name: "Krishna Gopinathan",
       title: "Founder & CEO",
-      bio: "Krishna Gopinathan, founder of Predictive Data Sciences, is a pioneer in predictive analytics and fraud detection. He invented Falcon, the technology behind today's leading fraud detection systems, and brings over two decades of experience in building data-driven solutions for financial services.",
+      bio: "With over 24 years of experience in data science and AI, Krishna is a serial entrepreneur who founded Global Analytics India and invented the original Falcon risk assessment system. His expertise spans across machine learning, predictive analytics, and fintech innovation.",
       achievements: [
-        "Founded Global Analytics India and multiple AI ventures",
-        "Invented Falcon, used globally for fraud detection",
-        "Founded two successful data science startups",
-        "24+ years of leadership in AI and data science",
-        "Recognized expert in credit risk and financial AI"
+        "24+ years of experience in data science and artificial intelligence",
+        "Serial entrepreneur and founder of Global Analytics India",
+        "Original inventor of the Falcon risk assessment system",
+        "Led development of AI solutions for 200+ fintech companies",
+        "Expert in machine learning, predictive analytics, and fintech strategy",
+        "Published researcher in AI applications for financial services"
       ],
-      linkedin: "http://www.linkedin.com/in/krishnagopinathan"
+      linkedin: "https://www.linkedin.com/in/krishna-gopinathan-data-science"
     },
-
     company: {
-      title: "About Predictive Data Sciences",
-      description: "Founded in 2014, Predictive Data Sciences is a next-generation analytics company focused on building intelligent risk and fraud prevention systems for global financial institutions.",
+      title: "Company Overview",
+      description: "Predictive Data Sciences was founded in 2015 with a vision to democratize AI and data science capabilities for fintech companies worldwide.",
       stats: [
-        { label: "Founded", value: "2014" },
-        { label: "Industry", value: "Financial Services" },
-        { label: "Company Size", value: "2–10 employees" },
-        { label: "Headquarters", value: "Chennai, India" }
+        { label: "Years of Experience", value: "10+" },
+        { label: "Fintech Clients", value: "200+" },
+        { label: "Team Members", value: "50+" },
+        { label: "Countries Served", value: "15+" }
       ]
     },
-
-    header: {
-      title: "Leadership Team",
-      tagline: "Veteran visionaries with deep technical and business expertise",
-      description: "Our leadership combines deep data science knowledge with a history of building successful companies and high-impact technologies."
-    },
-
-    team: {
-      title: "Meet the Team",
-      subtitle: "Experienced. Agile. Impact-driven."
-    },
-
-    expertise: {
-      title: "Our Areas of Expertise",
-      subtitle: "Deep technical foundations, practical business execution",
-      areas: [
-        {
-          title: "AI & Data Science",
-          description: "Mastery across ML, statistical modeling, and large-scale data systems."
-        },
-        {
-          title: "Fintech Engineering",
-          description: "Full-stack experience in building robust financial platforms and APIs."
-        },
-        {
-          title: "Risk & Fraud Intelligence",
-          description: "Trusted expertise in designing enterprise-grade fraud and credit scoring systems."
-        },
-        {
-          title: "Innovation Strategy",
-          description: "Track record of turning ideas into impactful, scalable solutions."
-        }
-      ]
-    },
-
-    philosophy: {
-      title: "Our Leadership Philosophy",
-      subtitle: "Principles that power sustainable, AI-led transformation",
-      principles: [
-        {
-          title: "Visionary Execution",
-          description: "We see what's coming and help you get there faster—with fewer risks."
-        },
-        {
-          title: "Collaborative Impact",
-          description: "We co-create with clients to solve real-world problems that matter."
-        },
-        {
-          title: "Continuous Learning",
-          description: "We stay ahead of the curve by investing in R&D and people."
-        },
-        {
-          title: "Long-Term Value",
-          description: "We believe in building systems and partnerships that grow sustainably."
-        }
-      ]
-    },
-
     cta: {
-      title: "Partner with Proven Leaders",
-      description: "Work with the team that built some of the most impactful fraud and credit scoring systems in the world.",
-      primaryButton: "Contact Us",
-      secondaryButton: "Learn More"
+      title: "Ready to Work with Industry Leaders?",
+      description: "Connect with our leadership team to discuss how we can help transform your fintech business.",
+      primaryButton: "Schedule a Consultation",
+      secondaryButton: "Learn More About Us"
     }
   },
 
-  // Contact Page Content
+  // Careers Page
+  careers: {
+    hero: {
+      title: "Careers at Predictive Data Sciences",
+      subtitle: "Join Our Innovation Journey",
+      description: "Be part of a team that's shaping the future of fintech through cutting-edge AI and data science solutions."
+    },
+    jobs: {
+      title: "Open Positions",
+      subtitle: "We're always looking for talented individuals who share our passion for innovation and excellence in fintech solutions."
+    },
+    culture: {
+      title: "Our Culture",
+      subtitle: "Built on innovation, collaboration, and excellence",
+      values: [
+        {
+          title: "Innovation",
+          description: "We encourage creative thinking and embrace new technologies to solve complex fintech challenges."
+        },
+        {
+          title: "Collaboration",
+          description: "We believe in the power of teamwork and foster an environment where everyone's ideas are valued."
+        },
+        {
+          title: "Growth",
+          description: "We invest in our team's professional development and provide opportunities for career advancement."
+        }
+      ]
+    },
+    benefits: {
+      title: "Benefits & Perks",
+      items: [
+        "Competitive salary and equity packages",
+        "Flexible working hours and remote work options",
+        "Professional development budget",
+        "Annual team retreats and events",
+        "State-of-the-art equipment and tools",
+        "Mentorship programs"
+      ]
+    },
+    cta: {
+      title: "Don't See the Perfect Role?",
+      description: "We're always interested in connecting with talented individuals. Send us your resume and let us know how you'd like to contribute to our mission.",
+      primaryButton: "Send Your Resume",
+      secondaryButton: "Learn About Our Culture"
+    }
+  },
+
+  // Contact Page
   contact: {
     hero: {
-      title: "Let's Talk AI for Finance",
-      subtitle: "Discover what intelligent data science can do for your business",
-      description: "Reach out to explore how Predictive Data Sciences can help transform your operations with risk-focused AI."
+      title: "Get in Touch",
+      subtitle: "Let's Build the Future Together",
+      description: "Ready to transform your fintech business with AI? Get in touch with our experts today."
     },
-
     info: {
-      title: "Connect With Us",
-      description: "We'd love to hear from you. Drop us a message and our team will get back shortly.",
+      title: "Contact Information",
+      description: "Reach out to us through any of the following channels. We're here to help you succeed.",
       offices: [
         {
-          title: "Chennai Office",
+          title: "Headquarters",
           address: "Chennai, Tamil Nadu, India",
+          details: "Our main development and operations center",
           isHeadquarters: true
         },
         {
-          title: "San Diego Office",
-          address: "San Diego, CA, United States",
+          title: "US Office",
+          address: "San Diego, CA, USA",
+          details: "Business development and client services",
           isHeadquarters: false
         }
       ]
     },
-
-    header: {
-      title: "Get In Touch",
-      tagline: "Transform your business with intelligent risk solutions",
-      description: "We're here to help with your AI, analytics, and fintech initiatives. Let's collaborate."
-    },
-
-    form: {
-      title: "Send a Message",
-      subjects: [
-        { value: "general", label: "General Inquiry" },
-        { value: "services", label: "Services & Solutions" },
-        { value: "partnership", label: "Partnership Opportunity" },
-        { value: "careers", label: "Career Inquiry" },
-        { value: "support", label: "Technical Support" }
-      ]
-    },
-
-    offices: {
-      title: "Global Reach. Local Expertise.",
-      subtitle: "Strategically located to serve financial hubs worldwide.",
-      locations: [
-        {
-          city: "San Francisco",
-          country: "United States",
-          description: "HQ & AI R&D Lab"
-        },
-        {
-          city: "London",
-          country: "United Kingdom",
-          description: "European operations and client services"
-        },
-        {
-          city: "Toronto",
-          country: "Canada",
-          description: "North America fintech development center"
-        }
-      ]
-    },
-
     cta: {
-      title: "Let's Build the Future Together",
-      description: "Join other forward-thinking institutions that trust Predictive Data Sciences to lead their AI transformation.",
-      primaryButton: "Start the Conversation",
-      secondaryButton: "Explore Our Solutions"
+      title: "Ready to Get Started?",
+      description: "Let's discuss how we can help transform your fintech business with our AI-powered solutions.",
+      primaryButton: "Schedule a Consultation",
+      secondaryButton: "Learn More"
     }
   },
 
-  // Footer and Common UI Text
-  footer: {
-    navigation: [
-      { label: "Home", path: "/" },
-      { label: "About", path: "/about" },
-      { label: "Team", path: "/leadership" },
-      { label: "Careers", path: "/careers" },
-      { label: "Contact", path: "/contact" }
-    ]
-  },
-
-  ui: {
-    navigation: {
-      home: "Home",
-      about: "About",
-      leadership: "Leadership",
-      careers: "Careers",
-      contact: "Contact"
-    },
-
-    buttons: {
-      learnMore: "Learn More",
-      getStarted: "Get Started",
-      readMore: "Read More",
-      readLess: "Read Less",
-      viewDetails: "View Details",
-      hideDetails: "Hide Details",
-      applyNow: "Apply Now",
-      getInTouch: "Get In Touch",
-      sendMessage: "Send Message",
-      downloadBrochure: "Download Brochure"
-    },
-
-    form: {
-      name: "Full Name",
-      email: "Email Address",
-      company: "Company",
-      phone: "Phone Number",
-      message: "Message",
-      subject: "Subject",
-      send: "Send Message",
-      sending: "Sending...",
-      success: "Message sent successfully!",
-      error: "Failed to send message. Please try again."
-    },
-
-    footer: {
-      description: "AI-powered predictive analytics for the future of finance",
-      quickLinks: "Quick Links",
-      contact: "Contact Info",
-      followUs: "Follow Us",
-      copyright: "© 2014 Predictive Data Sciences. All rights reserved.",
-      privacyPolicy: "Privacy Policy",
-      termsOfService: "Terms of Service"
-    },
-
-    placeholders: {
-      teamPhoto: "Team Photo",
-      missionVision: "Mission & Vision",
-      placeholderAsset: "Placeholder for your asset"
-    }
+  // Social Media
+  social: {
+    linkedin: "https://linkedin.com/company/predictive-data-sciences",
+    twitter: "https://twitter.com/predictive_ds",
+    github: "https://github.com/predictive-data-sciences",
+    email: "contact@predictive-data-sciences.com"
   }
 };

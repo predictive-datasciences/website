@@ -4,17 +4,7 @@ import { JOB_OPENINGS, COMPANY_INFO } from '../config/constants';
 import { CONTENT } from '../config/content';
 import './Careers.css';
 
-// Professional Icon Component
-const PlaceholderIcon = ({ type, size = "40" }) => (
-  <div className="placeholder-icon">
-    <div className="icon-placeholder" data-type={type}>
-      <svg width={size} height={size} viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="8" fill="currentColor" opacity="0.1"/>
-        <circle cx="20" cy="20" r="8" fill="currentColor" opacity="0.3"/>
-      </svg>
-    </div>
-  </div>
-);
+
 
 const Careers = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -55,7 +45,7 @@ const Careers = () => {
   };
 
   return (
-    <div className="careers">
+    <div className="careers page-sky-blue">
       {/* Header Section */}
       <section className="careers-header section bg-gradient-hero">
         <div className="container">
@@ -64,19 +54,21 @@ const Careers = () => {
             data-animate
             className={`careers-intro text-center ${isVisible['careers-intro'] ? 'animate-fadeInUp' : ''}`}
           >
-            <h1>{CONTENT.careers.hero.title}</h1>
-            <p className="careers-tagline text-large mb-6">
+            <h1 className="page-title-white">{CONTENT.careers.hero.title}</h1>
+            <p className="page-subtitle-white text-large mb-6">
               {CONTENT.careers.hero.subtitle}
             </p>
-            <p className="careers-description text-large">
+            <p className="page-description-white text-large">
               {CONTENT.careers.hero.description}
             </p>
           </div>
         </div>
       </section>
 
+
+
       {/* Job Openings Section */}
-      <section className="jobs-section section bg-primary-light">
+      <section className="jobs-section section">
         <div className="container">
           <div
             id="jobs-section"
@@ -90,8 +82,8 @@ const Careers = () => {
           <div className="jobs-grid grid grid-auto-fit-lg">
             {JOB_OPENINGS.map((job, index) => (
               <div key={index} className="job-card card">
-                <div className="job-header flex justify-between items-start mb-6">
-                  <div className="job-info flex-1">
+                <div className="job-header mb-6">
+                  <div className="job-info">
                     <h3 className="job-title card-title">{job.title}</h3>
                     <div className="job-meta flex gap-4 mt-2">
                       <span className="job-department card-subtitle">{job.department}</span>
@@ -99,7 +91,6 @@ const Careers = () => {
                       <span className="job-type card-subtitle">{job.type}</span>
                     </div>
                   </div>
-                  <PlaceholderIcon type={job.title.toLowerCase().includes('developer') ? 'developer' : 'data-scientist'} />
                 </div>
 
                 <p className="job-description card-description mb-6">{job.description}</p>
@@ -145,7 +136,7 @@ const Careers = () => {
       </section>
 
       {/* Company Culture Section */}
-      <section className="culture-section section bg-white">
+      <section className="culture-section section">
         <div className="container">
           <div
             id="culture-section"
@@ -159,9 +150,6 @@ const Careers = () => {
           <div className="values-grid grid grid-4">
             {CONTENT.careers.culture.values.map((value, index) => (
               <div key={index} className="value-card card text-center">
-                <div className="card-header justify-center">
-                  <PlaceholderIcon type={value.title.toLowerCase()} />
-                </div>
                 <h4 className="card-title">{value.title}</h4>
                 <p className="card-description">{value.description}</p>
               </div>
@@ -171,7 +159,7 @@ const Careers = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="benefits-section section bg-secondary-light">
+      <section className="benefits-section section">
         <div className="container">
           <div className="section-header">
             <h2>{CONTENT.careers.benefits.title}</h2>
@@ -180,9 +168,6 @@ const Careers = () => {
           <div className="benefits-grid grid grid-auto-fit-sm">
             {CONTENT.careers.benefits.items.map((benefit, index) => (
               <div key={index} className="benefit-card card card-compact text-center">
-                <div className="card-header justify-center">
-                  <PlaceholderIcon type="benefit" size="32" />
-                </div>
                 <p className="card-description text-small">{benefit}</p>
               </div>
             ))}
@@ -191,7 +176,7 @@ const Careers = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="career-cta section bg-gradient-secondary">
+      <section className="career-cta section">
         <div className="container">
           <div className="cta-content text-center">
             <h2>{CONTENT.careers.cta.title}</h2>
@@ -200,7 +185,7 @@ const Careers = () => {
               <Link to="/contact" className="btn btn-primary btn-xl">
                 {CONTENT.careers.cta.primaryButton}
               </Link>
-              <Link to="/about" className="btn btn-outline-white btn-xl">
+              <Link to="/about" className="btn btn-outline btn-xl">
                 {CONTENT.careers.cta.secondaryButton}
               </Link>
             </div>

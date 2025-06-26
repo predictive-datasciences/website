@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { CONTENT } from '../config/content';
 import './About.css';
 
@@ -57,7 +56,7 @@ const About = () => {
   };
 
   return (
-    <div className="about">
+    <div className="about page-sky-blue">
       {/* Header Section */}
       <section className="about-header section bg-gradient-hero">
         <div className="container">
@@ -66,8 +65,8 @@ const About = () => {
             data-animate
             className={`about-intro text-center ${isVisible['about-intro'] ? 'animate-fadeInUp' : ''}`}
           >
-            <h1>{CONTENT.about.hero.title}</h1>
-            <p className="about-tagline text-large mb-6">
+            <h1 className="page-title-white">{CONTENT.about.hero.title}</h1>
+            <p className="page-subtitle-white text-large mb-6">
               {CONTENT.about.hero.subtitle}
             </p>
           </div>
@@ -75,7 +74,7 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="mission-section section bg-primary-light">
+      <section className="mission-section section">
         <div className="container">
           <div
             id="mission-section"
@@ -97,7 +96,7 @@ const About = () => {
       </section>
 
       {/* Services Section */}
-      <section className="services-section section bg-white">
+      <section className="services-section section">
         <div className="container">
           <div
             id="services-section"
@@ -146,7 +145,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="why-choose-section section bg-secondary-light">
+      <section className="why-choose-section section">
         <div className="container">
           <div
             id="why-choose-section"
@@ -172,7 +171,7 @@ const About = () => {
       </section>
 
       {/* Approach Section */}
-      <section className="approach-section section bg-white">
+      <section className="approach-section section">
         <div className="container">
           <div
             id="approach-section"
@@ -198,7 +197,7 @@ const About = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="industries-section section bg-gray">
+      <section className="industries-section section">
         <div className="container">
           <div
             id="industries-section"
@@ -216,27 +215,6 @@ const About = () => {
                 <span className="text-sm font-medium mt-3">{industry}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta-section section bg-gradient-secondary">
-        <div className="container">
-          <div className="cta-content text-center">
-            <h2>Ready to Transform Your Business?</h2>
-            <p className="text-large mb-8">
-              Partner with Predictive Data Sciences to unlock the power of AI-driven
-              predictive analytics and take your financial services to the next level.
-            </p>
-            <div className="cta-actions flex gap-4 justify-center">
-              <Link to="/contact" className="btn btn-primary btn-xl">
-                Get Started Today
-              </Link>
-              <Link to="/careers" className="btn btn-outline-white btn-xl">
-                Join Our Team
-              </Link>
-            </div>
           </div>
         </div>
       </section>
