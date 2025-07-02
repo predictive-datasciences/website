@@ -1,0 +1,426 @@
+.scoring-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+}
+
+/* Overview Section */
+.overview-card {
+  background: var(--white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.overview-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--primary-light));
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* Use Cases Section */
+.use-case-card {
+  text-align: center;
+  position: relative;
+}
+
+.use-case-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--accent-green), #2f855a);
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  box-shadow: var(--shadow-md);
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.benefit-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
+  font-size: 0.95rem;
+  color: var(--gray-600);
+}
+
+.benefit-list li::before {
+  content: '✓';
+  color: var(--accent-green);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Model Architecture */
+.model-architecture {
+  background: var(--white);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.architecture-container {
+  margin-top: var(--spacing-lg);
+}
+
+.model-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.model-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--gray-50), var(--white));
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--gray-200);
+  min-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.model-step:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--primary-light));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.model-step h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-xs);
+}
+
+.model-step p {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.flow-connector {
+  font-size: 2rem;
+  color: var(--accent-blue);
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+/* Fraud Mesh Section */
+.fraud-mesh-section {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.fraud-mesh-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.fraud-mesh-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.mesh-icon {
+  font-size: 4rem;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mesh-content h3 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.mesh-content .body-large {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: var(--spacing-lg);
+}
+
+.fraud-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.fraud-feature {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.fraud-feature .feature-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* Technical Specs */
+.technical-specs {
+  background: var(--gray-50);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+}
+
+.specs-grid {
+  margin-top: var(--spacing-lg);
+}
+
+.spec-category {
+  background: var(--white);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+}
+
+.spec-category h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--accent-blue);
+}
+
+.spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.spec-list li {
+  padding: var(--spacing-sm) 0;
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.spec-list li:last-child {
+  border-bottom: none;
+}
+
+.spec-list strong {
+  color: var(--gray-800);
+  font-weight: 600;
+}
+
+/* API CTA Section */
+.api-cta {
+  background: linear-gradient(135deg, var(--accent-green), #2f855a);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.api-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h3 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-content .body-large {
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: var(--spacing-lg);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .model-flow {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .flow-connector {
+    transform: rotate(90deg);
+    font-size: 1.5rem;
+  }
+
+  .fraud-mesh-card {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-lg);
+  }
+
+  .fraud-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .scoring-content {
+    gap: var(--spacing-2xl);
+  }
+
+  .overview-card,
+  .model-architecture,
+  .fraud-mesh-section,
+  .technical-specs,
+  .api-cta {
+    padding: var(--spacing-lg);
+  }
+
+  .model-step {
+    min-width: auto;
+    width: 100%;
+    max-width: 280px;
+    padding: var(--spacing-md);
+  }
+
+  .mesh-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-icon,
+  .use-case-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .model-step h4 {
+    font-size: 1rem;
+  }
+
+  .model-step p {
+    font-size: 0.85rem;
+  }
+
+  .mesh-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .fraud-feature {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-xs);
+  }
+
+  .spec-list li {
+    font-size: 0.9rem;
+  }
+}
